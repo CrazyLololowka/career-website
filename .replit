@@ -6,16 +6,7 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "App"
-mode = "parallel"
-author = 51554470
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python app.py"
+runButton = "App"
 
 [[workflows.workflow]]
 name = "App"
