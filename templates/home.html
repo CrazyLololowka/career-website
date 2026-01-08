@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Pony Market</title>
-    <style>
-      h1{
-        font-size: 40px;
-        font-family: Equestria_Cyrillic;
-        font-weight: normal;
-        text-align: center;
-        }   
-          #banner {
-          width: 100%;
-          height: 600px;
-          object-fit: cover;
-          }  
-        #container{
-          max-width: 720px;
-          margin: 0 auto 0 auto;
-             
-          }
-    </style>
-  </head>
-  <body>
-    <div id='container'>
-      <img id= "banner" src= "https://da713160-fb20-4f22-b770-d709031c90a7-00-13v1sgf2rxf6n.pike.replit.dev/static/background.png" >
-      <h1>Pony Market</h1>
-      <h2>About Pony Market</h2>
-        <p>Pony Market is a website where you can sell and buy ponies</p>
-      <h2>Ponies</h2>
-      <p>To do ponies</p>
-      <div style="text-align:center;">
-        <button>Contact us</button>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darkmode</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="text/javascript" src="darkmode.js" defer></script>
+</head>
+<body class="darkmode">
+  <header>
+    <button id="theme-switch">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+    </button>
+    <h1>Pony Market</h1>
+    <p>The Pony Market is an exciting marketplace where enthusiasts can buy and sell ponies, offering a wide variety of breeds, colors, and sizes to suit every rider's needs. Whether you're looking for a beginner-friendly pony or a show-quality partner, the Pony Market provides a safe and vibrant community for both sellers and buyers to connect. With knowledgeable vendors and a user-friendly platform, it’s the perfect place to find your dream pony or get a fair price for your own. The market also hosts special events, competitions, and educational sessions to ensure everyone can enjoy and learn about these wonderful creatures.</p>
+    <h2 class='text-center mt-2 mb-4'>Ponies</h2>
+  </header>
+  <section>
+    <div class="text-center">
+        <button class="btn btn-outline-info">Contact us</button>
     </div>
-  </body>
+  </section>
+</body>
 </html>
