@@ -102,10 +102,12 @@ button{
     background-position: 200% 0;
   }
 }
+
 img {
   display: block; 
   max-width: 100%;
 }
+
 #theme-switch{
   height: 50px;
   width: 50px;
