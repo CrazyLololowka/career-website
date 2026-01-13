@@ -6,6 +6,7 @@
   --primary-color: #3a435d;
   --accent-color: #0071ff;
   --border: 2px solid #000000;
+  --gredient: rgb(25, 21, 21, 0.3);
 }
 .darkmode{
   --base-color: #070b1d;
@@ -15,6 +16,7 @@
   --primary-color: #3a435d;
   --accent-color: #0071ff;
   --border: 2px solid white;
+  --gredient: rgba(255, 255, 255, 0.3);
 }
 *{
   margin: 0;
@@ -34,10 +36,11 @@ header, section{
 section{
   background-color: var(--base-variant);
 }
-p{
-  margin: 10px 0 20px 0;
-  color: var(--secondary-text);
+h3{
+  margin: 5px 170px 30px 0px;
+  color: var(--text-color);
 }
+
 button{
   border: none;
   padding: .8em 2em;
@@ -51,61 +54,6 @@ button{
 }
 .cta-button{
   background-color: var(--accent-color);
-}
-.masonry {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(var(--item-width, 200px), 100%), 1fr)
-  );
-  grid-template-rows: masonry;
-  gap: 1rem;
-  grid-auto-flow: dense;
-
-  > *,
-  > astro-slot > * {
-    align-self: start;
-    grid-column-end: span var(--span, 1);
-  }
-}
-
-.box {
-  display: flex; 
-  flex-flow: column;
-  position: relative;
-  gap: 1rem;
-  border: var(--border); 
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--base-color);
-  background-repeat: no-repeat;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.box:hover {
-  transform: translateY(-5px);
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite linear;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-img {
-  display: block; 
-  max-width: 100%;
 }
 
 #theme-switch{
@@ -134,6 +82,69 @@ img {
   display: block;
 }
 
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--item-width, 200px), 100%), 1fr)
+  );
+  grid-template-rows: masonry;
+  gap: 1rem;
+  grid-auto-flow: dense;
 
-                              
-                
+  > *,
+  > astro-slot > * {
+    align-self: start;
+    grid-column-end: span var(--span, 1);
+  }
+}
+
+img {
+  display: block; 
+  max-width: 100%;
+}
+
+.box {
+  position: relative; 
+  display: flex; 
+  flex-flow: column;
+  gap: 1rem;
+  border: var(--border); 
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--base-color);
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    var(--gredient) 50%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+}
+
+.box:hover::before {
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer{
+  0%{
+    transform: translateX(-300%);
+  }
+  100%{
+    transform: translateX(300%);
+  }
+}
+
+
+
+
+
+
+
